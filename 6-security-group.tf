@@ -28,10 +28,8 @@ resource "aws_security_group" "VPC-Europe-Central-SG" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name    = "vpc-sg01-training-servers"
-    Service = "Training_Sandbox"
-    Owner   = "Frodo"
-    Planet  = "Arda"
-  }
+  tags = merge(
+    { Name = "${var.sg_tags}-01" },
+    var.resource_tags,
+  )
 }

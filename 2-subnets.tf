@@ -1,32 +1,28 @@
 #These are   for  public
 
-resource "aws_subnet" "public-eu-central-1a" {
+resource "aws_subnet" "public_zone1" {
   vpc_id                  = aws_vpc.VPC-Europe-Central.id
-  cidr_block              = "10.22.1.0/24"
-  availability_zone       = "eu-central-1a"
-  map_public_ip_on_launch = true
+  cidr_block              = var.public_subnet_cidr_blocks.public_zone1
+  availability_zone       = local.zone1
+  map_public_ip_on_launch = var.map_public_ip_on_launch
 
-  tags = {
-    Name    = "public-eu-central-1a"
-    Service = "Training_Sandbox"
-    Owner   = "Frodo"
-    Planet  = "Arda"
-  }
+  tags = merge(
+    { Name = "public-${local.zone1}" },
+    var.resource_tags,
+  )
+
+
 }
 
 
-
-
 #these are for private
-resource "aws_subnet" "private-eu-central-1a" {
+resource "aws_subnet" "private_zone1" {
   vpc_id            = aws_vpc.VPC-Europe-Central.id
-  cidr_block        = "10.22.11.0/24"
-  availability_zone = "eu-central-1a"
+  cidr_block        = var.private_subnet_cidr_blocks.private_zone1
+  availability_zone = local.zone1
 
-  tags = {
-    Name    = "private-eu-central-1a"
-    Service = "Training_Sandbox"
-    Owner   = "Frodo"
-    Planet  = "Arda"
-  }
+  tags = merge(
+    { Name = "private-${local.zone1}" },
+    var.resource_tags,
+  )
 }

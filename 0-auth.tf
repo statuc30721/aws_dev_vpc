@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-central-1"
+  region = var.aws_region
 }
 
 terraform {
@@ -9,4 +9,6 @@ terraform {
       version = "~> 6.0"
     }
   }
+
+  required_version = ">= 1.2"
 }

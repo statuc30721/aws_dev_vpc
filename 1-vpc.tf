@@ -1,15 +1,14 @@
 resource "aws_vpc" "VPC-Europe-Central" {
-  cidr_block = "10.22.0.0/16"
+  cidr_block = var.vpc_cidr_block
+  region     = var.aws_region
 
-  enable_dns_support   = true
-  enable_dns_hostnames = true
+  enable_dns_support   = var.enable_dns_support
+  enable_dns_hostnames = var.enable_dns_hostnames
 
-  tags = {
-    Name    = "VPC-Training"
-    Service = "Training_Sandbox"
-    Owner   = "Frodo"
-    Planet  = "Arda"
-  }
+  tags = merge(
+    { Name = "${var.vpc_name}" },
+    var.resource_tags,
+  )
 }
 
 

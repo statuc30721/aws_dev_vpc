@@ -11,8 +11,8 @@ resource "aws_route_table" "public-VPC-Europe-Central" {
   }
 }
 
-resource "aws_route_table_association" "public-eu-central-1" {
-  subnet_id      = aws_subnet.public-eu-central-1a.id
+resource "aws_route_table_association" "public_zone1" {
+  subnet_id      = aws_subnet.public_zone1.id
   route_table_id = aws_route_table.public-VPC-Europe-Central.id
 }
 
@@ -32,8 +32,8 @@ resource "aws_route_table" "private-VPC-Europe-Central" {
 }
 
 
-resource "aws_route_table_association" "private-eu-central-1" {
-  subnet_id      = aws_subnet.private-eu-central-1a.id
+resource "aws_route_table_association" "private_zone1" {
+  subnet_id      = aws_subnet.private_zone1.id
   route_table_id = aws_route_table.private-VPC-Europe-Central.id
 }
 
