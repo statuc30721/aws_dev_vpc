@@ -7,20 +7,20 @@ Another option is to just modify values directly in the variable.tf file.
 ## Architecture
 AWS Virtual Private Cloud. 
 
-CIDR = 10.22.0.0/16. 
+CIDR = 10.22.0.0/16 
 
 Subnet(s):  
 
-Public = 10.22.1.0/24. 
+Public = 10.22.1.0/24 
 
-Private = 10.22.11.0/24. 
+Private = 10.22.11.0/24 
 
 
-Network Address Translation Service. 
+Network Address Translation Service 
 
-Internet Gateway Service. 
+Internet Gateway Service
 
-Security Group. 
+Security Group 
 
 
 EC2 Instance
