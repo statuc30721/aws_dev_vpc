@@ -1,5 +1,9 @@
 This project provides a VPC for educational use only. Its purpose is to *avoid* using the default VPC in Amazon Web Service (AWS).
 
+This repository will deploy a single linux instance. Create a terraform.tfvars file to override the defaults in teh variable.tf file.
+
+Another option is to just modify values directly in the variable.tf file.
+
 ## Architecture
 AWS Virtual Private Cloud
 CIDR = 10.22.0.0/16
