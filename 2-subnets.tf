@@ -10,8 +10,6 @@ resource "aws_subnet" "public_zone1" {
     { Name = "public-${local.zone1}" },
     var.resource_tags,
   )
-
-
 }
 
 

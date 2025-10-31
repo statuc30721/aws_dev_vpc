@@ -3,7 +3,7 @@ resource "aws_eip" "nat" {
   domain = "vpc"
 
   tags = {
-    Name = "eip-nat-vpc-training"
+    Name = "eip-vpc-training"
   }
 }
 
